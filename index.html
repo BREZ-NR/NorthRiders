@@ -2,66 +2,73 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>NorthRiders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Riders</title>
+
   <style>
     body {
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    position: relative;
-    overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
     }
-	
-	/* ✅ IMMAGINE FISSA, TRASPARENTE E LEGGERA */
+
+    /* ✅ VERSIONE DESKTOP (immagini NORTH_RIDERS.png ai lati) */
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      width: 500px;
+      height: 100%;
+      background: url("NORTH_RIDERS.png") no-repeat center;
+      background-size: contain;
+      opacity: 0.15;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+    }
+
     body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 500px; /* Larghezza fascia laterale */
-    height: 100%;
-    background: url("NORTH_RIDERS.png") no-repeat center;
-    background-size: contain;
-    opacity: 0.15; /* ✅ trasparenza (0.05 – 0.3 consigliato) */
-    pointer-events: none; /* non blocca click */
+      left: 0;
     }
-	
-	  /* ✅ IMMAGINE FISSA LATO DESTRO */
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 500px;
-    height: 100%;
-    background: url("NORTH_RIDERS.png") no-repeat center;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-  }
+
+    body::after {
+      right: 0;
+    }
 
     .container {
       max-width: 500px;
       margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 400px;
+      margin-bottom: -50px;
+      margin-top: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff66;
     }
 
     .member-card {
-      background: #1a1a1a;         /* ✅ Box leggermente più chiaro per contrasto */
+      background: #1a1a1a;
       border-radius: 12px;
       padding: 20px;
       margin: 10px 0;
       box-shadow: 0 4px 10px rgba(255,255,255,0.08);
     }
 
-    .logo {
-      width: 400px;   /* cambia qui: 100px, 150px, 300px... */
-      margin-bottom: -50px;
-    }
-
-    a {                    	\\bottone instagram
+    a {
       display: inline-block;
       background: #ff00ff;
       color: #fff;
@@ -69,20 +76,64 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.2s ease-in-out;
     }
 
-    a:hover { 			\\colore piu scuro bottone instagram passaggio mouse
+    a:hover {
       background: #cc00cc;
+    }
+
+    /* 📱 VERSIONE SMARTPHONE */
+    @media (max-width: 768px) {
+
+      body::before {
+        background: url("NORTH_LOGO_SMARTPHONE.png") no-repeat center;
+        background-size: cover;
+        width: 50%;
+        opacity: 0.2;
+        left: 0;
+      }
+
+      body::after {
+        background: url("RIDERS_LOGO_SMARTPHONE.png") no-repeat center;
+        background-size: cover;
+        width: 50%;
+        opacity: 0.2;
+        right: 0;
+      }
+
+      .logo {
+        width: 250px;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .container {
+        max-width: 90%;
+      }
+
+      .member-card {
+        padding: 15px;
+      }
+
+      a {
+        padding: 8px 14px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
+
 <body>
-  
-  <!-- ✅ LOGO DEL GRUPPO QUI -->
-   <img src="NR_LOGO5.png" alt="Logo del Gruppo" class="logo">
+
+  <!-- ✅ LOGO PRINCIPALE -->
+  <img src="NR_LOGO5.png" alt="Logo del Gruppo" class="logo">
 
   <h1>North Riders</h1>
-    
+
   <div class="container">
 
     <div class="member-card">
@@ -92,7 +143,7 @@
 
     <div class="member-card">
       <h3>IM.BREZ</h3>
-      <a href="https://instagram.com/brutality_ita" target="_blank">Instagram</a>
+      <a href="https://instagram.com/im.brez" target="_blank">Instagram</a>
     </div>
 
     <div class="member-card">
@@ -104,47 +155,43 @@
       <h3>STOFFO13</h3>
       <a href="https://instagram.com/stoffo13" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>SNIP3RITA</h3>
       <a href="https://instagram.com/snip3rita" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>_MARTINA_BRANDO_</h3>
       <a href="https://instagram.com/_martina_brando_" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>FOLGHE_81</h3>
       <a href="https://instagram.com/folghe_81" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>VIKING.OF.TORQUE</h3>
       <a href="https://instagram.com/viking.of.torque" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>THEITALIANR1DER</h3>
       <a href="https://instagram.com/theitalianr1der" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>TRENTIN ALESSANDRO</h3>
       <a href="https://instagram.com/trentin_alessandro" target="_blank">Instagram</a>
     </div>
-	
-	<div class="member-card">
+
+    <div class="member-card">
       <h3>LADY.ON.Z650</h3>
       <a href="https://instagram.com/lady.on.z650" target="_blank">Instagram</a>
     </div>
 
-    <!-- Copia e incolla questo blocco per ogni membro -->
-
   </div>
 
 </body>
-
 </html>
-
